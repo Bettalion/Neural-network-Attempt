@@ -1,0 +1,26 @@
+Gen is male when 0
+aten is:
+ 1) all
+ 2) day-week
+ 3) week - month
+ 4) month - 3month
+ 5) never
+wealth is:
+ 1) 0-10k
+ 2) 10-40k
+ 3) 40-80k
+ 4) 80-100k 
+ 5) 100k+
+rac is:
+ 1) asia
+ 2) america
+ 3) africa
+ 4) Eu
+ 5) aus
+edu is:
+ 1) Less than high school degree
+ 2) High school degree or equivalent (e.g., GED)
+ 3) Some college but no degree
+ 4) Associate degree
+ 5) Bachelor degree
+ 6) Graduate degree

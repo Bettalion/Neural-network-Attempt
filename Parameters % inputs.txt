@@ -1,0 +1,12 @@
+Predicting GCSE Grade
+
+Time revised
+time spent socializing
+Gender
+attendance
+wealth
+Geographic location
+Family size
+Ethnicity
+Highest Academic qualification (parents / siblings)
+
