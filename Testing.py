@@ -86,7 +86,7 @@ def rdata(Cases,InputNodes,grades):
   except:
     f=open('Data R.R','w')
 
-  # training
+  # training data
   x=str(InputNodes[0][:TL]).split('[')[1].split(']')[0]
   tr=f'TR=c({x})\n'
   x=str(InputNodes[1][:TL]).split('[')[1].split(']')[0]
