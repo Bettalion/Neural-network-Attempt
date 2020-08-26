@@ -72,7 +72,13 @@ def Collect(sample=10):
   # return [InputNodes,Grade]
   return [Cases,InputNodes,Grade]
 
-
+def CA(arr,ind,TL,name,GRADE=False):
+  if GRADE == False:
+    x=str(arr[ind][:TL]).split('[')[1].split(']')[0]
+  else:
+    x=str(arr[TL:]).split('[')[1].split(']')[0]
+  rv = f'{name}=c({x})\n'
+  return rv
 def rdata(Cases,InputNodes,grades):
   total=len(Cases[0])
   try:
@@ -107,6 +113,16 @@ def rdata(Cases,InputNodes,grades):
   x=str(grades[:TL]).split('[')[1].split(']')[0]
   G9=f'Grade9=c({x})\n'
 
+  tr=CA(InputNodes,0,TL,'TR')
+  ts=CA(InputNodes,1,TL,'TS')
+  gen=CA(InputNodes,2,TL,'GEN')
+  aten=CA(InputNodes,3,TL,'ATEN')
+  wea=CA(InputNodes,4,TL,'WEA')
+  fams=CA(InputNodes,5,TL,'FAMS')
+  eth=CA(InputNodes,6,TL,'ETH')
+  hqual=CA(InputNodes,7,TL,'HQUAL')
+
+  G9=CA(grades,9,TL,'Grade9',True)
 
   ############
   # testing
@@ -129,6 +145,18 @@ def rdata(Cases,InputNodes,grades):
 
   x=str(grades[TL:]).split('[')[1].split(']')[0]
   G9s=f'Grade9s=c({x})\n'
+
+  trs=CA(InputNodes,0,TL,'TRs')
+  tss=CA(InputNodes,1,TL,'TSs')
+  gens=CA(InputNodes,2,TL,'GENs')
+  atens=CA(InputNodes,3,TL,'ATENs')
+  weas=CA(InputNodes,4,TL,'WEAs')
+  famss=CA(InputNodes,5,TL,'FAMSs')
+  eths=CA(InputNodes,6,TL,'ETHs')
+  hquals=CA(InputNodes,7,TL,'HQUALs')
+
+  G9s=CA(grades,9,TL,'Grade9s',True)
+  
   
   trainingString=f'{tr}{ts}{gen}{aten}{wea}{fams}{eth}{hqual}\n{G9}'
   testingString=f'{trs}{tss}{gens}{atens}{weas}{famss}{eths}{hquals}\n{G9s}'
